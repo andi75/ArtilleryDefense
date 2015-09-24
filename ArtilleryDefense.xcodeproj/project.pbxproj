@@ -15,6 +15,8 @@
 		E153C2391BB3CF860025AA9E /* ArtilleryDefenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2381BB3CF860025AA9E /* ArtilleryDefenseTests.swift */; };
 		E153C2441BB3CF860025AA9E /* ArtilleryDefenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2431BB3CF860025AA9E /* ArtilleryDefenseUITests.swift */; };
 		E153C2521BB3CFA60025AA9E /* ADScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2511BB3CFA60025AA9E /* ADScene.swift */; settings = {ASSET_TAGS = (); }; };
+		E153C2551BB3F5780025AA9E /* ShellExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E153C2531BB3F5780025AA9E /* ShellExplosion.sks */; settings = {ASSET_TAGS = (); }; };
+		E153C2561BB3F5780025AA9E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E153C2541BB3F5780025AA9E /* spark.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E153C2431BB3CF860025AA9E /* ArtilleryDefenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtilleryDefenseUITests.swift; sourceTree = "<group>"; };
 		E153C2451BB3CF860025AA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E153C2511BB3CFA60025AA9E /* ADScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADScene.swift; sourceTree = "<group>"; };
+		E153C2531BB3F5780025AA9E /* ShellExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShellExplosion.sks; sourceTree = "<group>"; };
+		E153C2541BB3F5780025AA9E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				E153C2251BB3CF860025AA9E /* ViewController.swift */,
 				E153C2271BB3CF860025AA9E /* Main.storyboard */,
 				E153C2511BB3CFA60025AA9E /* ADScene.swift */,
+				E153C2531BB3F5780025AA9E /* ShellExplosion.sks */,
+				E153C2541BB3F5780025AA9E /* spark.png */,
 				E153C22A1BB3CF860025AA9E /* Assets.xcassets */,
 				E153C22C1BB3CF860025AA9E /* LaunchScreen.storyboard */,
 				E153C22F1BB3CF860025AA9E /* Info.plist */,
@@ -231,8 +237,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E153C2561BB3F5780025AA9E /* spark.png in Resources */,
 				E153C22E1BB3CF860025AA9E /* LaunchScreen.storyboard in Resources */,
 				E153C22B1BB3CF860025AA9E /* Assets.xcassets in Resources */,
+				E153C2551BB3F5780025AA9E /* ShellExplosion.sks in Resources */,
 				E153C2291BB3CF860025AA9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

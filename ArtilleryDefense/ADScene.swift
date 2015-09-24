@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class ADScene : SKScene
+class ADScene : SKScene, SKPhysicsContactDelegate
 {
     var ground : SKSpriteNode? = nil
     var cannon : SKShapeNode? = nil
@@ -36,12 +36,18 @@ class ADScene : SKScene
         
         self.physicsWorld.gravity = CGVectorMake(0, -5.0)
         
+        self.physicsWorld.contactDelegate = self
+        
         ground = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(self.size.width, groundHeight))
         //ground?.anchorPoint = CGPointMake(0, 0)
         //ground?.position = CGPointMake(0, 0)
         ground?.position = CGPointMake(self.size.width / 2, groundHeight / 2)
         ground?.physicsBody = SKPhysicsBody(rectangleOfSize: ground!.size)
         ground?.physicsBody?.dynamic = false
+        
+        ground?.physicsBody?.categoryBitMask = 1
+        
+        
         self.addChild(ground!)
         
         cannon = SKShapeNode(circleOfRadius: cannonRadius)
@@ -92,7 +98,36 @@ class ADScene : SKScene
             
             shell?.physicsBody = SKPhysicsBody(circleOfRadius: barrelDiameter / 2)
             shell?.physicsBody?.velocity = CGVectorMake(shellSpeed * cos(barrel!.zRotation), shellSpeed * sin(barrel!.zRotation))
+            
+            shell?.physicsBody?.contactTestBitMask = 1
+            
             self.addChild(shell!)
+        }
+    }
+    
+    func blowUp(node: SKNode)
+    {
+        let boom = SKEmitterNode(fileNamed: "ShellExplosion.sks")
+        boom?.position = node.position
+        
+        self.addChild(boom!)
+        
+        node.removeFromParent()
+        
+        if(node == shell)
+        {
+            shell = nil
+        }
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        if(contact.bodyA.contactTestBitMask == 1)
+        {
+            blowUp(contact.bodyA.node!)
+        }
+        if(contact.bodyB.contactTestBitMask == 1)
+        {
+            blowUp(contact.bodyB.node!)
         }
     }
 }
