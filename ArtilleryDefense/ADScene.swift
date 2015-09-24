@@ -51,7 +51,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         self.addChild(ground!)
         
         cannon = SKShapeNode(circleOfRadius: cannonRadius)
-        cannon?.fillColor = UIColor.redColor()
+        cannon?.fillColor = UIColor.grayColor()
         cannon?.position = CGPointMake(cannonOffset + cannonRadius, groundHeight)
         cannon?.physicsBody = SKPhysicsBody(circleOfRadius: cannonRadius)
         cannon?.physicsBody?.dynamic = false
@@ -88,7 +88,9 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         if(true)
         {
             shell = SKShapeNode(circleOfRadius: barrelDiameter / 2)
-            shell?.fillColor = UIColor.greenColor()
+            shell?.fillColor = UIColor.redColor()
+            shell?.strokeColor = UIColor.redColor()
+            
             shell?.position = CGPointMake(
                 cannon!.position.x +
                     (cannonRadius + barrelLength) * cos(barrel!.zRotation),
