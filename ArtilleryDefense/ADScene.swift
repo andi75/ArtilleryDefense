@@ -25,15 +25,27 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     var minAngle : CGFloat = CGFloat(1.5 / 18.0 * M_PI)
     var maxAngle : CGFloat = CGFloat(8.5 / 18.0 * M_PI)
     
+    var lastEnemyTime : NSTimeInterval = 0
+    var minEnemyTime : NSTimeInterval = 0.1
+    var maxEnemyTime : NSTimeInterval = 3.0
+    var nextEnemyTime : NSTimeInterval = 0
+    
+    var enemyRadius : CGFloat = 6
+    
+    var maxShellCount = 3
+    var currentShellCount = 0
+    
+    var life = 10
+    var score = 0
+    
     override func didMoveToView(view: SKView) {
         self.size = view.frame.size
         self.backgroundColor = UIColor.blackColor()
         
         self.physicsWorld.gravity = CGVectorMake(0, -5.0)
-        
         self.physicsWorld.contactDelegate = self
         
-        let ground = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(self.size.width, groundHeight))
+        let ground = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(self.size.width + 2 * enemyRadius, groundHeight))
 
         ground.position = CGPointMake(self.size.width / 2, groundHeight / 2)
         ground.physicsBody = SKPhysicsBody(rectangleOfSize: ground.size)
@@ -59,7 +71,17 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         barrel.zRotation = CGFloat(M_PI / 4)
         self.addChild(barrel)
         
+        let liveLabel = SKLabelNode(text: "Leben")
+        liveLabel.name = "LiveLabel"
+        liveLabel.fontSize = 16
+        liveLabel.position = CGPointMake(30, self.size.height - 40)
+        self.addChild(liveLabel)
         
+        let scoreLabel = SKLabelNode(text: "Score")
+        scoreLabel.name = "ScoreLabel"
+        scoreLabel.fontSize = 16
+        scoreLabel.position = CGPointMake(30, self.size.height - 60)
+        self.addChild(scoreLabel)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -82,10 +104,21 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if(currentShellCount < maxShellCount)
+        {
+            print(currentShellCount)
+            currentShellCount++
+            fireShot()
+        }
+    }
+    
+    func fireShot()
+    {
         let barrel = self.childNodeWithName("Barrel")!
         let cannon = self.childNodeWithName("Cannon")!
         
         let shell = SKShapeNode(circleOfRadius: barrelDiameter / 2)
+        shell.name = "Shell"
         shell.fillColor = UIColor.redColor()
         shell.strokeColor = UIColor.redColor()
         
@@ -99,7 +132,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         shell.physicsBody = SKPhysicsBody(circleOfRadius: barrelDiameter / 2)
         shell.physicsBody?.velocity = CGVectorMake(shellSpeed * cos(barrel.zRotation), shellSpeed * sin(barrel.zRotation))
         
-        shell.physicsBody?.contactTestBitMask = 1
+        shell.physicsBody?.contactTestBitMask = 3
         
         self.addChild(shell)
     }
@@ -111,17 +144,86 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         
         self.addChild(boom!)
         
+        if(node.name == "Shell")
+        {
+            currentShellCount--
+        }
+        
         node.removeFromParent()
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        if(contact.bodyA.contactTestBitMask == 1)
+        if(
+            (contact.bodyA.node!.name == "Shell" &&
+                contact.bodyB.node!.name == "Enemy") ||
+                (contact.bodyA.node!.name == "Enemy" &&
+                    contact.bodyB.node!.name == "Shell")
+            )
+        {
+            score++
+        }
+        if(
+            (contact.bodyA.node!.name == "Cannon" &&
+                contact.bodyB.node!.name == "Enemy") ||
+                (contact.bodyA.node!.name == "Enemy" &&
+                    contact.bodyB.node!.name == "Cannon")
+            )
+        {
+            life--
+        }
+        
+        if(contact.bodyA.contactTestBitMask > 0)
         {
             blowUp(contact.bodyA.node!)
         }
-        if(contact.bodyB.contactTestBitMask == 1)
+        if(contact.bodyB.contactTestBitMask > 0)
         {
             blowUp(contact.bodyB.node!)
         }
     }
+    
+    func spawnEnemy()
+    {
+        let enemy = SKShapeNode(circleOfRadius: enemyRadius)
+        enemy.name = "Enemy"
+        enemy.fillColor = UIColor.greenColor()
+        enemy.position = CGPointMake(
+            self.size.width + enemyRadius,
+            groundHeight + enemyRadius)
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: enemyRadius)
+        enemy.physicsBody?.contactTestBitMask = 2
+        enemy.physicsBody?.velocity = CGVectorMake(-80, 0)
+        enemy.physicsBody?.linearDamping = 0
+        enemy.physicsBody?.friction = 0
+        self.addChild(enemy)
+    }
+    
+    func updateLabels()
+    {
+        let liveLabel = self.childNodeWithName("LiveLabel") as! SKLabelNode
+        let scoreLabel = self.childNodeWithName("ScoreLabel") as! SKLabelNode
+        
+        liveLabel.text = "Lives: \(life)"
+        scoreLabel.text = "Score: \(score)"
+    }
+    
+    override func update(currentTime: NSTimeInterval) {
+        updateLabels()
+        
+        if(lastEnemyTime == 0)
+        {
+            lastEnemyTime = currentTime
+        }
+        
+        let dt = currentTime - lastEnemyTime
+        if(dt > nextEnemyTime)
+        {
+            let r = Double(arc4random() % 128) / 128.0
+            nextEnemyTime = r * (maxEnemyTime - minEnemyTime)
+//            print("spawning enemy after \(dt) seconds, next one at = \(nextEnemyTime)")
+            spawnEnemy()
+            lastEnemyTime = currentTime
+        }
+    }
+    
 }
