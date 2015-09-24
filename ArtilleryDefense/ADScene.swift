@@ -15,20 +15,20 @@ class ADScene : SKScene
     var barrel : SKSpriteNode? = nil
     var shell : SKShapeNode? = nil
     
-    var groundHeight : CGFloat = 100
-    var cannonRadius : CGFloat = 60
-    var cannonOffset : CGFloat = 30
+    var groundHeight : CGFloat = 50
+    var cannonRadius : CGFloat = 30
+    var cannonOffset : CGFloat = 15
     
     var barrelLength : CGFloat = 40
-    var barrelDiameter : CGFloat = 10
+    var barrelDiameter : CGFloat = 8
     
-    var shellSpeed : CGFloat = 500
+    var shellSpeed : CGFloat = 440
     
     var lasttouch : CGPoint = CGPointMake(0, 0)
 
     var rotationScale : CGFloat = 0.01
-    var minAngle : CGFloat = CGFloat(1.0 / 18.0 * M_PI)
-    var maxAngle : CGFloat = CGFloat(7.0 / 18.0 * M_PI)
+    var minAngle : CGFloat = CGFloat(1.5 / 18.0 * M_PI)
+    var maxAngle : CGFloat = CGFloat(8.5 / 18.0 * M_PI)
     
     override func didMoveToView(view: SKView) {
         self.size = view.frame.size
