@@ -24,6 +24,12 @@ class ADScene : SKScene
     
     var shellSpeed : CGFloat = 500
     
+    var lasttouch : CGPoint = CGPointMake(0, 0)
+
+    var rotationScale : CGFloat = 0.01
+    var minAngle : CGFloat = CGFloat(1.0 / 18.0 * M_PI)
+    var maxAngle : CGFloat = CGFloat(7.0 / 18.0 * M_PI)
+    
     override func didMoveToView(view: SKView) {
         self.size = view.frame.size
         self.backgroundColor = UIColor.blackColor()
@@ -41,6 +47,8 @@ class ADScene : SKScene
         cannon = SKShapeNode(circleOfRadius: cannonRadius)
         cannon?.fillColor = UIColor.redColor()
         cannon?.position = CGPointMake(cannonOffset + cannonRadius, groundHeight)
+        cannon?.physicsBody = SKPhysicsBody(circleOfRadius: cannonRadius)
+        cannon?.physicsBody?.dynamic = false
         self.addChild(cannon!)
         
         barrel = SKSpriteNode(color: UIColor.blueColor(), size: CGSizeMake(barrelLength, barrelDiameter))
@@ -50,6 +58,23 @@ class ADScene : SKScene
         self.addChild(barrel!)
         
         
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch in touches
+        {
+            lasttouch = touch.locationInNode(self)
+        }
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch in touches
+        {
+            let currenttouch = touch.locationInNode(self)
+            barrel!.zRotation += (currenttouch.y - lasttouch.y) * rotationScale
+            barrel!.zRotation = max( min(barrel!.zRotation, maxAngle), minAngle )
+            lasttouch = currenttouch
+        }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
