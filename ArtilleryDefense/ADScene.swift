@@ -148,7 +148,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         {
             return
         }
-        print("blowing up \(node.name)")
+        // print("blowing up \(node.name)")
         
         let boom = SKEmitterNode(fileNamed: "ShellExplosion.sks")
         boom?.position = node.position
@@ -164,7 +164,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        print("\(contact.bodyA.node!.name) => \(contact.bodyB.node!.name)")
+        print("\(contact.bodyA.node!.name!) => \(contact.bodyB.node!.name!)")
         
         if(
             (contact.bodyA.node!.name == "Shell" &&
