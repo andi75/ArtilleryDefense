@@ -46,12 +46,13 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         self.physicsWorld.contactDelegate = self
         
         let ground = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(self.size.width + 2 * enemyRadius, groundHeight))
+        ground.name = "Ground"
 
         ground.position = CGPointMake(self.size.width / 2, groundHeight / 2)
         ground.physicsBody = SKPhysicsBody(rectangleOfSize: ground.size)
         ground.physicsBody?.dynamic = false
-        
-        ground.physicsBody?.categoryBitMask = 1
+        ground.physicsBody?.categoryBitMask = 8
+        ground.physicsBody?.contactTestBitMask = 0
         self.addChild(ground)
         
         let cannon = SKShapeNode(circleOfRadius: cannonRadius)
@@ -61,6 +62,8 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         cannon.position = CGPointMake(cannonOffset + cannonRadius, groundHeight)
         cannon.physicsBody = SKPhysicsBody(circleOfRadius: cannonRadius)
         cannon.physicsBody?.dynamic = false
+        cannon.physicsBody?.categoryBitMask = 1
+        cannon.physicsBody?.contactTestBitMask = 4
         self.addChild(cannon)
         
         let barrel = SKSpriteNode(color: UIColor.blueColor(), size: CGSizeMake(barrelLength, barrelDiameter))
@@ -106,7 +109,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if(currentShellCount < maxShellCount)
         {
-            print(currentShellCount)
+            // print(currentShellCount)
             currentShellCount++
             fireShot()
         }
@@ -132,7 +135,8 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         shell.physicsBody = SKPhysicsBody(circleOfRadius: barrelDiameter / 2)
         shell.physicsBody?.velocity = CGVectorMake(shellSpeed * cos(barrel.zRotation), shellSpeed * sin(barrel.zRotation))
         
-        shell.physicsBody?.contactTestBitMask = 3
+        shell.physicsBody?.categoryBitMask = 2
+        shell.physicsBody?.contactTestBitMask = 4 + 8
         
         self.addChild(shell)
     }
@@ -144,6 +148,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         {
             return
         }
+        print("blowing up \(node.name)")
         
         let boom = SKEmitterNode(fileNamed: "ShellExplosion.sks")
         boom?.position = node.position
@@ -159,6 +164,8 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
+        print("\(contact.bodyA.node!.name) => \(contact.bodyB.node!.name)")
+        
         if(
             (contact.bodyA.node!.name == "Shell" &&
                 contact.bodyB.node!.name == "Enemy") ||
@@ -178,11 +185,17 @@ class ADScene : SKScene, SKPhysicsContactDelegate
             life--
         }
         
-        if(contact.bodyA.contactTestBitMask > 0)
+        if(
+            (contact.bodyA.node!.name == "Shell") ||
+                (contact.bodyA.node!.name == "Enemy")
+            )
         {
             blowUp(contact.bodyA.node!)
         }
-        if(contact.bodyB.contactTestBitMask > 0)
+        if(
+            (contact.bodyB.node!.name == "Shell") ||
+                (contact.bodyB.node!.name == "Enemy")
+            )
         {
             blowUp(contact.bodyB.node!)
         }
@@ -200,7 +213,8 @@ class ADScene : SKScene, SKPhysicsContactDelegate
             self.size.width + enemyRadius,
             groundHeight + enemyRadius + 30 * h * enemyRadius)
         enemy.physicsBody = SKPhysicsBody(circleOfRadius: enemyRadius)
-        enemy.physicsBody?.contactTestBitMask = 2
+        enemy.physicsBody?.categoryBitMask = 4
+        enemy.physicsBody?.contactTestBitMask = 1
         enemy.physicsBody?.velocity = CGVectorMake(-80, 0)
         enemy.physicsBody?.linearDamping = 0
         enemy.physicsBody?.friction = 0
