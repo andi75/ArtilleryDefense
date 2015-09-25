@@ -63,7 +63,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         cannon.physicsBody = SKPhysicsBody(circleOfRadius: cannonRadius)
         cannon.physicsBody?.dynamic = false
         cannon.physicsBody?.categoryBitMask = 1
-        cannon.physicsBody?.contactTestBitMask = 4
+        cannon.physicsBody?.contactTestBitMask = 0
         self.addChild(cannon)
         
         let barrel = SKSpriteNode(color: UIColor.blueColor(), size: CGSizeMake(barrelLength, barrelDiameter))
