@@ -74,13 +74,13 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         let liveLabel = SKLabelNode(text: "Leben")
         liveLabel.name = "LiveLabel"
         liveLabel.fontSize = 16
-        liveLabel.position = CGPointMake(30, self.size.height - 40)
+        liveLabel.position = CGPointMake(40, self.size.height - 40)
         self.addChild(liveLabel)
         
         let scoreLabel = SKLabelNode(text: "Score")
         scoreLabel.name = "ScoreLabel"
         scoreLabel.fontSize = 16
-        scoreLabel.position = CGPointMake(30, self.size.height - 60)
+        scoreLabel.position = CGPointMake(40, self.size.height - 60)
         self.addChild(scoreLabel)
     }
     
@@ -186,15 +186,19 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     {
         let enemy = SKShapeNode(circleOfRadius: enemyRadius)
         enemy.name = "Enemy"
+        
+        let h = CGFloat(arc4random() % 4) / 4.0
+
         enemy.fillColor = UIColor.greenColor()
         enemy.position = CGPointMake(
             self.size.width + enemyRadius,
-            groundHeight + enemyRadius)
+            groundHeight + enemyRadius + 30 * h * enemyRadius)
         enemy.physicsBody = SKPhysicsBody(circleOfRadius: enemyRadius)
         enemy.physicsBody?.contactTestBitMask = 2
         enemy.physicsBody?.velocity = CGVectorMake(-80, 0)
         enemy.physicsBody?.linearDamping = 0
         enemy.physicsBody?.friction = 0
+        enemy.physicsBody?.restitution = 1
         self.addChild(enemy)
     }
     
