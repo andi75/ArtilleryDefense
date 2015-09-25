@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let gameOverVC = segue.destinationViewController as! GameOverViewController
         gameOverVC.score = scene!.score
+        gameOverVC.highscore = scene!.highscore
     }
 }
 

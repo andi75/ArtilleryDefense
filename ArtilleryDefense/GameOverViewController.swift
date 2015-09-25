@@ -14,17 +14,10 @@ class GameOverViewController : UIViewController
     @IBOutlet weak var highScoreLabel: UILabel!
     
     var score : Int = 0
+    var highscore : Int = 0
     
     override func viewDidLoad() {
         self.scoreLabel.text = "Your Score: \(score)"
-        let defaults = NSUserDefaults()
-        var highscore = defaults.integerForKey("ADSceneHighScore")
-        if(score > highscore)
-        {
-            highscore = score
-            defaults.setInteger(highscore, forKey: "ADSceneHighScore")
-            defaults.synchronize()
-        }
         self.highScoreLabel.text = "High Score: \(highscore)"
     }
 }

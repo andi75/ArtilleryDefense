@@ -39,6 +39,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     
     var life = 3
     var score = 0
+    var highscore = 0
     
     override func didMoveToView(view: SKView) {
         self.size = view.frame.size
@@ -79,14 +80,37 @@ class ADScene : SKScene, SKPhysicsContactDelegate
         let liveLabel = SKLabelNode(text: "Leben")
         liveLabel.name = "LiveLabel"
         liveLabel.fontSize = 16
-        liveLabel.position = CGPointMake(40, self.size.height - 40)
+        liveLabel.position = CGPointMake(10, self.size.height - 40)
+        liveLabel.horizontalAlignmentMode = .Left
         self.addChild(liveLabel)
         
         let scoreLabel = SKLabelNode(text: "Score")
         scoreLabel.name = "ScoreLabel"
         scoreLabel.fontSize = 16
-        scoreLabel.position = CGPointMake(40, self.size.height - 60)
+        scoreLabel.position = CGPointMake(10, self.size.height - 60)
+        scoreLabel.horizontalAlignmentMode = .Left
         self.addChild(scoreLabel)
+        
+        let highscoreLabel = SKLabelNode(text: "Highscore")
+        highscoreLabel.name = "HighscoreLabel"
+        highscoreLabel.fontSize = 16
+        highscoreLabel.position = CGPointMake(10, self.size.height - 80)
+        highscoreLabel.horizontalAlignmentMode = .Left
+        self.addChild(highscoreLabel)
+
+        updateHighscore()
+    }
+    
+    func updateHighscore()
+    {
+        let defaults = NSUserDefaults()
+        highscore = defaults.integerForKey("ADSceneHighScore")
+        if(score > highscore)
+        {
+            highscore = score
+            defaults.setInteger(highscore, forKey: "ADSceneHighScore")
+            defaults.synchronize()
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -180,6 +204,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
             )
         {
             score++
+            updateHighscore()
         }
         if(
             (contact.bodyA.node!.name == "Cannon" &&
@@ -236,9 +261,11 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     {
         let liveLabel = self.childNodeWithName("LiveLabel") as! SKLabelNode
         let scoreLabel = self.childNodeWithName("ScoreLabel") as! SKLabelNode
+        let highscoreLabel = self.childNodeWithName("HighscoreLabel") as! SKLabelNode
         
         liveLabel.text = "Lives: \(life)"
         scoreLabel.text = "Score: \(score)"
+        highscoreLabel.text = "Highscore: \(highscore)"
     }
     
     override func update(currentTime: NSTimeInterval) {
