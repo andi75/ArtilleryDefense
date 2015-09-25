@@ -35,7 +35,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     var maxShellCount = 3
     var currentShellCount = 0
     
-    var life = 10
+    var life = 3
     var score = 0
     
     override func didMoveToView(view: SKView) {
@@ -187,6 +187,10 @@ class ADScene : SKScene, SKPhysicsContactDelegate
             )
         {
             life--
+            if(life <= 0)
+            {
+                self.view?.window?.rootViewController?.performSegueWithIdentifier("GameOverSegue", sender: nil)
+            }
         }
         
         if(

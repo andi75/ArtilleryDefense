@@ -17,6 +17,7 @@
 		E153C2521BB3CFA60025AA9E /* ADScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2511BB3CFA60025AA9E /* ADScene.swift */; settings = {ASSET_TAGS = (); }; };
 		E153C2551BB3F5780025AA9E /* ShellExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E153C2531BB3F5780025AA9E /* ShellExplosion.sks */; settings = {ASSET_TAGS = (); }; };
 		E153C2561BB3F5780025AA9E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E153C2541BB3F5780025AA9E /* spark.png */; settings = {ASSET_TAGS = (); }; };
+		E1EC84251BB5488F0033E3B1 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC84241BB5488F0033E3B1 /* GameOverViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E153C2511BB3CFA60025AA9E /* ADScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADScene.swift; sourceTree = "<group>"; };
 		E153C2531BB3F5780025AA9E /* ShellExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShellExplosion.sks; sourceTree = "<group>"; };
 		E153C2541BB3F5780025AA9E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		E1EC84241BB5488F0033E3B1 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				E153C2231BB3CF860025AA9E /* AppDelegate.swift */,
 				E153C2251BB3CF860025AA9E /* ViewController.swift */,
+				E1EC84241BB5488F0033E3B1 /* GameOverViewController.swift */,
 				E153C2271BB3CF860025AA9E /* Main.storyboard */,
 				E153C2511BB3CFA60025AA9E /* ADScene.swift */,
 				E153C2531BB3F5780025AA9E /* ShellExplosion.sks */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1EC84251BB5488F0033E3B1 /* GameOverViewController.swift in Sources */,
 				E153C2521BB3CFA60025AA9E /* ADScene.swift in Sources */,
 				E153C2261BB3CF860025AA9E /* ViewController.swift in Sources */,
 				E153C2241BB3CF860025AA9E /* AppDelegate.swift in Sources */,

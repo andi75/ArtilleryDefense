@@ -17,9 +17,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="JaB-b0-sU2" kind="show" identifier="GameOverSegue" id="EjD-V0-NUg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="rh1-PL-sKM">
+            <objects>
+                <viewController id="JaB-b0-sU2" customClass="GameOverViewController" customModule="ArtilleryDefense" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dLe-d3-WYT"/>
+                        <viewControllerLayoutGuide type="bottom" id="4bh-Sg-nhx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BKm-w6-UZT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djd-ZT-JcI">
+                                <rect key="frame" x="230" y="283.5" width="140.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcy-Z7-SvJ">
+                                <rect key="frame" x="263" y="357" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="CV0-Hc-P4e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLS-3h-jbL">
+                                <rect key="frame" x="258.5" y="325" width="83.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lcy-Z7-SvJ" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="AQx-eZ-chZ"/>
+                            <constraint firstItem="fLS-3h-jbL" firstAttribute="top" secondItem="djd-ZT-JcI" secondAttribute="bottom" constant="8" id="Dr0-Jy-Wye"/>
+                            <constraint firstItem="djd-ZT-JcI" firstAttribute="centerY" secondItem="BKm-w6-UZT" secondAttribute="centerY" id="Eoa-Nw-lER"/>
+                            <constraint firstItem="Lcy-Z7-SvJ" firstAttribute="top" secondItem="djd-ZT-JcI" secondAttribute="bottom" constant="40" id="XH8-81-VoT"/>
+                            <constraint firstItem="djd-ZT-JcI" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="iqs-LQ-ShW"/>
+                            <constraint firstItem="fLS-3h-jbL" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="y32-aW-hs5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="fLS-3h-jbL" id="H5W-X6-dji"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhN-LS-xgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="221"/>
         </scene>
     </scenes>
 </document>

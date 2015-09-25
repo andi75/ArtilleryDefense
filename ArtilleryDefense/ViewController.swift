@@ -10,11 +10,18 @@ import SpriteKit
 
 class ViewController: UIViewController {
 
+    var scene : ADScene? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let scene = ADScene()
+        scene = ADScene()
         (self.view as! SKView).presentScene(scene)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let gameOverVC = segue.destinationViewController as! GameOverViewController
+        gameOverVC.score = scene!.score
     }
 }
 
