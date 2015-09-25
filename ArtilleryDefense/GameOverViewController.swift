@@ -18,12 +18,7 @@ class GameOverViewController : UIViewController
     override func viewDidLoad() {
         self.scoreLabel.text = "Your Score: \(score)"
         let defaults = NSUserDefaults()
-        let highscoreNum : NSNumber? = defaults.valueForKey("ADSceneHighScore") as? NSNumber
-        var highscore : Int = 0
-        if(highscoreNum == nil)
-        {
-            highscore = score
-        }
+        var highscore = defaults.integerForKey("ADSceneHighScore")
         if(score > highscore)
         {
             highscore = score
