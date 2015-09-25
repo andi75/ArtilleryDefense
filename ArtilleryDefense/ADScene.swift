@@ -164,7 +164,11 @@ class ADScene : SKScene, SKPhysicsContactDelegate
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        print("\(contact.bodyA.node!.name!) => \(contact.bodyB.node!.name!)")
+        if(contact.bodyA.node == nil || contact.bodyB.node == nil)
+        {
+            return
+        }
+        // print("\(contact.bodyA.node!.name!) => \(contact.bodyB.node!.name!)")
         
         if(
             (contact.bodyA.node!.name == "Shell" &&
