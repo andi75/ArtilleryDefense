@@ -139,6 +139,12 @@ class ADScene : SKScene, SKPhysicsContactDelegate
 
     func blowUp(node: SKNode)
     {
+        // check if node is still in sceneGraph
+        if(node.parent != self)
+        {
+            return
+        }
+        
         let boom = SKEmitterNode(fileNamed: "ShellExplosion.sks")
         boom?.position = node.position
         
