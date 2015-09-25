@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcy-Z7-SvJ">
-                                <rect key="frame" x="263" y="357" width="75" height="30"/>
+                                <rect key="frame" x="263" y="397" width="75" height="30"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="CV0-Hc-P4e"/>
@@ -55,18 +55,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcv-2w-KXt">
+                                <rect key="frame" x="261" y="353" width="78.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lcy-Z7-SvJ" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="AQx-eZ-chZ"/>
                             <constraint firstItem="fLS-3h-jbL" firstAttribute="top" secondItem="djd-ZT-JcI" secondAttribute="bottom" constant="8" id="Dr0-Jy-Wye"/>
                             <constraint firstItem="djd-ZT-JcI" firstAttribute="centerY" secondItem="BKm-w6-UZT" secondAttribute="centerY" id="Eoa-Nw-lER"/>
-                            <constraint firstItem="Lcy-Z7-SvJ" firstAttribute="top" secondItem="djd-ZT-JcI" secondAttribute="bottom" constant="40" id="XH8-81-VoT"/>
+                            <constraint firstItem="qcv-2w-KXt" firstAttribute="top" secondItem="fLS-3h-jbL" secondAttribute="bottom" constant="7.5" id="MKV-tN-KJh"/>
+                            <constraint firstItem="Lcy-Z7-SvJ" firstAttribute="top" secondItem="djd-ZT-JcI" secondAttribute="bottom" constant="80" id="XH8-81-VoT"/>
+                            <constraint firstItem="qcv-2w-KXt" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="XW3-7z-ZGe"/>
                             <constraint firstItem="djd-ZT-JcI" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="iqs-LQ-ShW"/>
                             <constraint firstItem="fLS-3h-jbL" firstAttribute="centerX" secondItem="BKm-w6-UZT" secondAttribute="centerX" id="y32-aW-hs5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="highScoreLabel" destination="qcv-2w-KXt" id="x0Q-IB-rUi"/>
                         <outlet property="scoreLabel" destination="fLS-3h-jbL" id="H5W-X6-dji"/>
                     </connections>
                 </viewController>

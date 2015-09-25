@@ -10,6 +10,8 @@ import SpriteKit
 
 class ADScene : SKScene, SKPhysicsContactDelegate
 {
+    var viewController : UIViewController? = nil
+    
     var groundHeight : CGFloat = 50
     var cannonRadius : CGFloat = 30
     var cannonOffset : CGFloat = 15
@@ -189,7 +191,7 @@ class ADScene : SKScene, SKPhysicsContactDelegate
             life--
             if(life <= 0)
             {
-                self.view?.window?.rootViewController?.performSegueWithIdentifier("GameOverSegue", sender: nil)
+                self.viewController?.performSegueWithIdentifier("GameOverSegue", sender: nil)
             }
         }
         

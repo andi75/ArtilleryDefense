@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         scene = ADScene()
+        scene!.viewController = self
         (self.view as! SKView).presentScene(scene)
     }
     
