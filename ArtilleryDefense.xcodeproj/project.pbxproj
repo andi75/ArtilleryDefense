@@ -12,30 +12,11 @@
 		E153C2291BB3CF860025AA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E153C2271BB3CF860025AA9E /* Main.storyboard */; };
 		E153C22B1BB3CF860025AA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E153C22A1BB3CF860025AA9E /* Assets.xcassets */; };
 		E153C22E1BB3CF860025AA9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E153C22C1BB3CF860025AA9E /* LaunchScreen.storyboard */; };
-		E153C2391BB3CF860025AA9E /* ArtilleryDefenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2381BB3CF860025AA9E /* ArtilleryDefenseTests.swift */; };
-		E153C2441BB3CF860025AA9E /* ArtilleryDefenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2431BB3CF860025AA9E /* ArtilleryDefenseUITests.swift */; };
-		E153C2521BB3CFA60025AA9E /* ADScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2511BB3CFA60025AA9E /* ADScene.swift */; settings = {ASSET_TAGS = (); }; };
-		E153C2551BB3F5780025AA9E /* ShellExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E153C2531BB3F5780025AA9E /* ShellExplosion.sks */; settings = {ASSET_TAGS = (); }; };
-		E153C2561BB3F5780025AA9E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E153C2541BB3F5780025AA9E /* spark.png */; settings = {ASSET_TAGS = (); }; };
-		E1EC84251BB5488F0033E3B1 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC84241BB5488F0033E3B1 /* GameOverViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E153C2521BB3CFA60025AA9E /* ADScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E153C2511BB3CFA60025AA9E /* ADScene.swift */; };
+		E153C2551BB3F5780025AA9E /* ShellExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E153C2531BB3F5780025AA9E /* ShellExplosion.sks */; };
+		E153C2561BB3F5780025AA9E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E153C2541BB3F5780025AA9E /* spark.png */; };
+		E1EC84251BB5488F0033E3B1 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC84241BB5488F0033E3B1 /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E153C2351BB3CF860025AA9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E153C2181BB3CF860025AA9E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E153C21F1BB3CF860025AA9E;
-			remoteInfo = ArtilleryDefense;
-		};
-		E153C2401BB3CF860025AA9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E153C2181BB3CF860025AA9E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E153C21F1BB3CF860025AA9E;
-			remoteInfo = ArtilleryDefense;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E153C2201BB3CF860025AA9E /* ArtilleryDefense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtilleryDefense.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,12 +26,6 @@
 		E153C22A1BB3CF860025AA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E153C22D1BB3CF860025AA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E153C22F1BB3CF860025AA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E153C2341BB3CF860025AA9E /* ArtilleryDefenseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtilleryDefenseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E153C2381BB3CF860025AA9E /* ArtilleryDefenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtilleryDefenseTests.swift; sourceTree = "<group>"; };
-		E153C23A1BB3CF860025AA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E153C23F1BB3CF860025AA9E /* ArtilleryDefenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtilleryDefenseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E153C2431BB3CF860025AA9E /* ArtilleryDefenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtilleryDefenseUITests.swift; sourceTree = "<group>"; };
-		E153C2451BB3CF860025AA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E153C2511BB3CFA60025AA9E /* ADScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADScene.swift; sourceTree = "<group>"; };
 		E153C2531BB3F5780025AA9E /* ShellExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShellExplosion.sks; sourceTree = "<group>"; };
 		E153C2541BB3F5780025AA9E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -65,20 +40,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E153C2311BB3CF860025AA9E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E153C23C1BB3CF860025AA9E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,8 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				E153C2221BB3CF860025AA9E /* ArtilleryDefense */,
-				E153C2371BB3CF860025AA9E /* ArtilleryDefenseTests */,
-				E153C2421BB3CF860025AA9E /* ArtilleryDefenseUITests */,
 				E153C2211BB3CF860025AA9E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				E153C2201BB3CF860025AA9E /* ArtilleryDefense.app */,
-				E153C2341BB3CF860025AA9E /* ArtilleryDefenseTests.xctest */,
-				E153C23F1BB3CF860025AA9E /* ArtilleryDefenseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,24 +74,6 @@
 				E153C22F1BB3CF860025AA9E /* Info.plist */,
 			);
 			path = ArtilleryDefense;
-			sourceTree = "<group>";
-		};
-		E153C2371BB3CF860025AA9E /* ArtilleryDefenseTests */ = {
-			isa = PBXGroup;
-			children = (
-				E153C2381BB3CF860025AA9E /* ArtilleryDefenseTests.swift */,
-				E153C23A1BB3CF860025AA9E /* Info.plist */,
-			);
-			path = ArtilleryDefenseTests;
-			sourceTree = "<group>";
-		};
-		E153C2421BB3CF860025AA9E /* ArtilleryDefenseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E153C2431BB3CF860025AA9E /* ArtilleryDefenseUITests.swift */,
-				E153C2451BB3CF860025AA9E /* Info.plist */,
-			);
-			path = ArtilleryDefenseUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,61 +96,18 @@
 			productReference = E153C2201BB3CF860025AA9E /* ArtilleryDefense.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E153C2331BB3CF860025AA9E /* ArtilleryDefenseTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E153C24B1BB3CF860025AA9E /* Build configuration list for PBXNativeTarget "ArtilleryDefenseTests" */;
-			buildPhases = (
-				E153C2301BB3CF860025AA9E /* Sources */,
-				E153C2311BB3CF860025AA9E /* Frameworks */,
-				E153C2321BB3CF860025AA9E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E153C2361BB3CF860025AA9E /* PBXTargetDependency */,
-			);
-			name = ArtilleryDefenseTests;
-			productName = ArtilleryDefenseTests;
-			productReference = E153C2341BB3CF860025AA9E /* ArtilleryDefenseTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E153C23E1BB3CF860025AA9E /* ArtilleryDefenseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E153C24E1BB3CF860025AA9E /* Build configuration list for PBXNativeTarget "ArtilleryDefenseUITests" */;
-			buildPhases = (
-				E153C23B1BB3CF860025AA9E /* Sources */,
-				E153C23C1BB3CF860025AA9E /* Frameworks */,
-				E153C23D1BB3CF860025AA9E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E153C2411BB3CF860025AA9E /* PBXTargetDependency */,
-			);
-			name = ArtilleryDefenseUITests;
-			productName = ArtilleryDefenseUITests;
-			productReference = E153C23F1BB3CF860025AA9E /* ArtilleryDefenseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E153C2181BB3CF860025AA9E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Andreas Umbach";
 				TargetAttributes = {
 					E153C21F1BB3CF860025AA9E = {
 						CreatedOnToolsVersion = 7.0;
-					};
-					E153C2331BB3CF860025AA9E = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = E153C21F1BB3CF860025AA9E;
-					};
-					E153C23E1BB3CF860025AA9E = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = E153C21F1BB3CF860025AA9E;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -229,8 +125,6 @@
 			projectRoot = "";
 			targets = (
 				E153C21F1BB3CF860025AA9E /* ArtilleryDefense */,
-				E153C2331BB3CF860025AA9E /* ArtilleryDefenseTests */,
-				E153C23E1BB3CF860025AA9E /* ArtilleryDefenseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,20 +142,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E153C2321BB3CF860025AA9E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E153C23D1BB3CF860025AA9E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -276,36 +156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E153C2301BB3CF860025AA9E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E153C2391BB3CF860025AA9E /* ArtilleryDefenseTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E153C23B1BB3CF860025AA9E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E153C2441BB3CF860025AA9E /* ArtilleryDefenseUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E153C2361BB3CF860025AA9E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E153C21F1BB3CF860025AA9E /* ArtilleryDefense */;
-			targetProxy = E153C2351BB3CF860025AA9E /* PBXContainerItemProxy */;
-		};
-		E153C2411BB3CF860025AA9E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E153C21F1BB3CF860025AA9E /* ArtilleryDefense */;
-			targetProxy = E153C2401BB3CF860025AA9E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E153C2271BB3CF860025AA9E /* Main.storyboard */ = {
@@ -340,8 +191,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -385,8 +238,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -405,6 +260,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -418,6 +274,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = umbach.ch.ArtilleryDefense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -429,54 +286,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = umbach.ch.ArtilleryDefense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E153C24C1BB3CF860025AA9E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ArtilleryDefenseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = umbach.ch.ArtilleryDefenseTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArtilleryDefense.app/ArtilleryDefense";
-			};
-			name = Debug;
-		};
-		E153C24D1BB3CF860025AA9E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ArtilleryDefenseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = umbach.ch.ArtilleryDefenseTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArtilleryDefense.app/ArtilleryDefense";
-			};
-			name = Release;
-		};
-		E153C24F1BB3CF860025AA9E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ArtilleryDefenseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = umbach.ch.ArtilleryDefenseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ArtilleryDefense;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		E153C2501BB3CF860025AA9E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ArtilleryDefenseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = umbach.ch.ArtilleryDefenseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ArtilleryDefense;
-				USES_XCTRUNNER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -497,24 +307,6 @@
 			buildConfigurations = (
 				E153C2491BB3CF860025AA9E /* Debug */,
 				E153C24A1BB3CF860025AA9E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E153C24B1BB3CF860025AA9E /* Build configuration list for PBXNativeTarget "ArtilleryDefenseTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E153C24C1BB3CF860025AA9E /* Debug */,
-				E153C24D1BB3CF860025AA9E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E153C24E1BB3CF860025AA9E /* Build configuration list for PBXNativeTarget "ArtilleryDefenseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E153C24F1BB3CF860025AA9E /* Debug */,
-				E153C2501BB3CF860025AA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
